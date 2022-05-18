@@ -1,21 +1,21 @@
 <template>
-  <div className="p-3 mb-2 bg-light text-dark container">
-    <h1 className="white-text">TabComponent</h1>
-
-    <div class="tabsPane">
-      <div className="p-3 mb-2 bg-light text-dark">
+  <div >
+    <h1>TabComponent</h1>
+    <div>
+      <div class="tabs">
         <TabContent
-          v-for="tabButton, i in tabButtons"
+          v-for="tabContent, i in tabs_contents"
           :key="i"
-          :index="i"
-          :text="tabButton"
+          :index="tabContent.id"
+          :text="tabContent.title"
           @onChange="(val) => updateContent(val)"
         />
       </div>
     </div>
   </div>
+  <br/>
   <div>
-    {{ content[i] }}
+    {{ tabs_contents[i].content }}
   </div>
 </template>
 
@@ -34,4 +34,29 @@ import TabContent from "./TabContent.vue";
     }>();
     const i = ref(0);
 
+    const tabs_contents = [
+        {
+      id: 0,
+      content: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. ",
+      title: "Primeira aba"
+    },
+    {
+      id: 1,
+      content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      title: "Segunda aba"
+    },
+    {
+      id: 2,
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida orci massa, ut convallis arcu eleifend id. Sed turpis nisi, gravida at cursus eget, commodo in velit. Phasellus sit amet dapibus neque. Mauris rhoncus sem eu erat accumsan, a suscipit diam lobortis. Pellentesque ullamcorper feugiat diam malesuada mattis. Cras quis bibendum mi. Donec arcu tellus, suscipit quis suscipit sit amet, interdum rhoncus purus.",
+      title: "Terceira aba"
+    },
+    ]
+
 </script>
+
+<style scoped>
+.tabs{
+    display: flex;
+    flex-wrap: nowrap;
+}
+</style>

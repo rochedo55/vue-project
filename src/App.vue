@@ -3,12 +3,20 @@ import Tabs from "./components/Tabs.vue";
 </script>
 
 <template>
-  <Tabs
-    :tabButtons="['Aba 1', 'Aba 2', 'Aba 3']"
-    :content="['conteudo da aba 1', 'conteudo da aba 2', 'conteudo da aba 3']"
-  ></Tabs>
+  <Tabs/>
 </template>
 
 <style>
 @import "./assets/base.css";
+.App {
+  text-align: center;
+}
+.botoes {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: blue;
+}
+.botao {
+  padding-left: 10px;
+}
 </style>

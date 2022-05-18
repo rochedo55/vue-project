@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <button className="btn btn-primary" @click.prevent="$emit('onChange', index)">
+    <button class="botao" @click.prevent="$emit('onChange', index)">
       {{ text }}
     </button>
   </div>
@@ -11,5 +11,15 @@ defineProps<{
   index: string[];
   text: string[];
 }>();
-defineEmits<{(e: "onChange", val: number): void}>();
+defineEmits<{ (e: "onChange", val: number): void }>();
 </script>
+
+<style scoped>
+.contents{
+    display: flex;
+}
+.botao{
+    flex-direction: row;
+    justify-content: flex-start;
+}
+</style>
