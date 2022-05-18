@@ -15,11 +15,4 @@ defineEmits<{ (e: "onChange", val: number): void }>();
 </script>
 
 <style scoped>
-.contents{
-    display: flex;
-}
-.botao{
-    flex-direction: row;
-    justify-content: flex-start;
-}
 </style>

@@ -14,7 +14,7 @@
     </div>
   </div>
   <br/>
-  <div>
+  <div class="content">
     {{ tabs_contents[i].content }}
   </div>
 </template>
@@ -58,5 +58,11 @@ import TabContent from "./TabContent.vue";
 .tabs{
     display: flex;
     flex-wrap: nowrap;
+    padding-left: 10px;
+    justify-content: space-evenly;
+}
+.content{
+    align-items: center;
+    padding-left: 10px;
 }
 </style>
